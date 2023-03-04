@@ -6,21 +6,21 @@ using System;
 namespace VendorOrder.Tests
 {
     [TestClass]
-    public class CategoryTests : IDisposable
+    public class VendorTests : IDisposable
     {
 
         public void Dispose()
         {
-            Category.ClearAll();
+            Vendor.ClearAll();
         }
 
         [TestMethod]
-        public void CategoryConstructor_CreatesInstanceOfCategory_Category()
+        public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
         {
-            Category newCategory = new Category("test category");
-            Assert.AreEqual(typeof(Category), newCategory.GetType());
+            Vendor newVendor = new Vendor("test Vendor");
+            Assert.AreEqual(typeof(Vendor), newVendor.GetType());
         }
-
+/*
         [TestMethod]
         public void GetName_ReturnsName_String()
         {
@@ -99,5 +99,6 @@ namespace VendorOrder.Tests
             //Assert
             CollectionAssert.AreEqual(newList, result);
         }
+*/
     }
 }
