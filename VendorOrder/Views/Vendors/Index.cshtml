@@ -11,9 +11,9 @@
       <h3>Nothing has been added yet!</h3>
     } 
 
-    @foreach (Category category in Model)
+    @foreach (Vendor vendor in Model)
     {
-      <h3><a href='/categories/@category.Id'>@category.Name</a></h3>
+      <h3><a href='/vendors/@vendor.Id'>@vendor.Name</a></h3>
     }
 
     <p><a href='/'>Back home</a></p>
