@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace VendorOrder.Models
 {
     public class Category
     {

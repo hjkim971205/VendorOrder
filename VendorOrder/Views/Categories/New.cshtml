@@ -1,0 +1,17 @@
+@{
+  Layout = "_Layout";
+}
+  <body>
+    <h1>Add a catalog</h1>
+    <p>Add on to the catalog here:</p>
+    <p>ex: Vynyl / CD / FLAC / MP3</p>
+    <form action="/categories" method="post">
+      <label for="categoryName">Catalog name</label>
+      <input id="categoryName" name="categoryName" type="text">
+      <button type="submit">Add</button>
+    </form>
+
+    <p><a href="/">Back home</a></p>
+    <p><a href="/categories">Back to catalogs.</a></p>
+  </body>
+</html>

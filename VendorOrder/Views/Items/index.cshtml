@@ -1,0 +1,28 @@
+@{
+  Layout = "_Layout";
+}
+  <body>
+    @using VendorOrder.Models;
+
+    <h1>To Do List</h1>
+    @if (Model.Count == 0)
+    {
+      <p>Nothing Exists Yet!</p>
+    }
+    <ul>
+      @foreach (Item item in Model)
+      {
+        <li><a href='/items/@item.Id'>@item.Album</a></li>
+        <li><a href='/items/@item.Id'>@item.Artist</a></li>
+        <li><a href='/items/@item.Id'>@item.Release</a></li>
+        <li><a href='/items/@item.Id'>@item.Title</a></li>
+      }
+    </ul>
+
+    <a href="/items/new">Add a new item.</a>
+
+    <form action="/items/delete" method="post">
+      <button type="submit" name="button">Clear All Items</button>
+    </form>
+  </body>
+</html>

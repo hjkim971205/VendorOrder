@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System;
 using Microsoft.AspNetCore.Mvc;
-using ToDoList.Models;
+using VendorOrder.Models;
 
-namespace ToDoList.Controllers
+namespace VendorOrder.Controllers
 {
     public class CategoriesController : Controller
     {
@@ -41,11 +41,11 @@ namespace ToDoList.Controllers
 
         // This one creates new Items within a given Category, not new Categories:
         [HttpPost("/categories/{categoryId}/items")]
-        public ActionResult Create(int categoryId, string itemDescription)
+        public ActionResult Create(int categoryId, string itemAlbum, string itemArtist, string itemRelease, string itemTitle)
         {
             Dictionary<string, object> model = new Dictionary<string, object>();
             Category foundCategory = Category.Find(categoryId);
-            Item newItem = new Item(itemDescription);
+            Item newItem = new Item(itemAlbum, itemArtist, itemRelease, itemTitle);
             foundCategory.AddItem(newItem);
             List<Item> categoryItems = foundCategory.Items;
             model.Add("items", categoryItems);

@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+  <body>
+    <h1>Add a new album to @Model.Name collection</h1>
+
+    <form action="/categories/@Model.Id/items" method="post">
+      <input id="categoryId" name="categoryId" type="hidden" value="@Model.Id">
+      
+      <label for="itemAlbum">Album Name:</label>
+      <input id="itemAlbum" name="itemAlbum" type="text">
+
+      <label for="itemArtist">Album Artist:</label>
+      <input id="itemArtist" name="itemArtist" type="text">
+      
+      <label for="itemRelease">Release Date:</label>
+      <input id="itemRelease" name="itemRelease" type="date">
+      
+      <label for="itemTitle">Title Track:</label>
+      <input id="itemTitle" name="itemTitle" type="text">
+      
+      <button type='submit'>Add Album</button>
+    </form>
+  </body>
+</html>

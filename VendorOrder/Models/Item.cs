@@ -1,16 +1,25 @@
 using System.Collections.Generic;
 
-namespace ToDoList.Models
+namespace VendorOrder.Models
 {
     public class Item
     {
+        public string Album { get; set; }
+        public string Artist { get; set; }
+        public string Release { get; set; }
+        public string Title { get; set; }
         public string Description { get; set; }
+
         public int Id { get; }
         private static List<Item> _instances = new List<Item> { };
 
-        public Item(string description)
+        public Item(string album, string artist, string release, string title)
         {
-            Description = description;
+            
+            Album = album;
+            Artist = artist;
+            Release = release;
+            Title = title; 
             _instances.Add(this);
             Id = _instances.Count;
         }

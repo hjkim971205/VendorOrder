@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout";
+}
+
+<body>
+  <h1>Album Details: </h1>
+
+  <h4>Album title:</h4> 
+  <p>@Model["item"].Album</p>
+  <h4>Album artist:</h4> 
+  <p>@Model["item"].Artist</p>
+  <h4>Album released:</h4> 
+  <p>@Model["item"].Release</p>
+  <h4>Album title track:</h4> 
+  <p>@Model["item"].Title</p>
+
+  <h4>Catalog: @Model["category"].Name</h4>
+
+  <a href='/categories/@Model["category"].Id/items/new'>Add another album</a>
+  <a href='/categories'>View the collection catalog</a>
+</body>
+
+</html>
