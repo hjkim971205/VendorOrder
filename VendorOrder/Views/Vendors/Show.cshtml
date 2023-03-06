@@ -4,17 +4,18 @@
   <body>
     @using VendorOrder.Models;
 
-    <h3>Here are all the albums in this music catalog:</h3>
+    <h3>Glad to be doing business with you @Model["vendor"].Name!</h3>
+    <h4>Your past orders</h4>
 
     <ol>
-    @foreach (Item item in @Model["items"])
+    @foreach (Order order in @Model["orders"])
     {
-      <li><a href='/categories/@Model["category"].Id/items/@item.Id'>@item.Album</a></li>
+      <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Name</a></li>
     }
     </ol>
 
-    <p><a href='/categories/@Model["category"].Id/items/new'>Add a new album</a></p>
-    <p><a href='/categories'>Return to catalog list</a></p>
+    <p><a href='/vendors/@Model["vendor"].Id/orders/new'>Make another order</a></p>
+    <p><a href='/vendors'>Return to vendor list</a></p>
     <p><a href='/'>Return to Main Page</a></p>
   </body>
 </html>

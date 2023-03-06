@@ -4,23 +4,23 @@ using System.Collections.Generic;
 
 namespace VendorOrder.Controllers
 {
-  public class ItemsController : Controller
+  public class OrdersController : Controller
   {
 
-    [HttpGet("/vendors/{vendorId}/items/new")]
+    [HttpGet("/vendors/{vendorId}/orders/new")]
     public ActionResult New(int vendorId)
     {
       Vendor vendor = Vendor.Find(vendorId);
       return View(vendor);
     }
 
-    [HttpGet("/vendors/{vendorId}/items/{itemId}")]
-    public ActionResult Show(int vendorId, int itemId)
+    [HttpGet("/vendors/{vendorId}/orders/{orderId}")]
+    public ActionResult Show(int vendorId, int orderId)
     {
-      Item item = Item.Find(itemId);
+      Order order = Order.Find(orderId);
       Vendor vendor = Vendor.Find(vendorId);
       Dictionary<string, object> model = new Dictionary<string, object>();
-      model.Add("item", item);
+      model.Add("order", order);
       model.Add("vendor", vendor);
       return View(model);
     }

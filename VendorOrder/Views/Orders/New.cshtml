@@ -1,0 +1,25 @@
+@{
+  Layout = "_Layout";
+}
+  <body>
+    <h1>Fill out this form to start on a new order for: @Model.Name</h1>
+
+    <form action="/vendors/@Model.Id/orders" method="post">
+      <input id="vendorId" name="vendorId" type="hidden" value="@Model.Id">
+      
+      <label for="orderName">Order Name:</label>
+      <input id="orderName" name="orderName" type="text">
+
+      <label for="orderLocation">Order Location:</label>
+      <input id="orderLocation" name="orderLocation" type="text">
+      
+      <label for="orderDue">Order Deadline:</label>
+      <input id="iorderDue" name="orderDue" type="date">
+      
+      <label for="orderQuantity">Order Quantity:</label>
+      <input id="orderQuantity" name="orderQuantity" type="text">
+      
+      <button type='submit'>Add Order</button>
+    </form>
+  </body>
+</html>
